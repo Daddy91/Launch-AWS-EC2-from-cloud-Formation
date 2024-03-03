@@ -4,7 +4,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/Daddy91/Configuring-MariaDB-replication-Master-Master-on-AWS-EC2">
+  <a href="https://github.com/Daddy91/Launch-AWS-EC2-from-cloud-Formation">
   </a>
 
   <h3 align="center">Creating an AWS Application Load Balancer (ALB), Autoscaling Group, and Target Group using AWS CloudFormation</h3>
@@ -12,7 +12,7 @@
   <p align="center">
     Step by step tutorial
     <br />
-    <a href="https://github.com/Daddy91/Configuring-MariaDB-replication-Master-Master-on-AWS-EC2"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Daddy91/Launch-AWS-EC2-from-cloud-Formation"><strong>Explore the docs »</strong></a>
     <br />
     <br />
   </p>

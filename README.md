@@ -32,13 +32,3 @@ This repository contains a CloudFormation template that can be used to provision
 
 - An AWS account with the necessary permissions to create resources using CloudFormation.
 - Basic knowledge of AWS services such as EC2, ALB, Autoscaling, and CloudFormation.
-
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[AWS-url]: https://aws.amazon.com/?nc2=h_lg
-[AWS]: https://img.shields.io/badge/aws-white?style=for-the-badge&logo=amazon&logoColor=yellow
-
-

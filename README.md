@@ -24,14 +24,10 @@
 
 This repository contains a CloudFormation template that can be used to provision AWS resources including an Application Load Balancer (ALB), Autoscaling Group, and Target Group. These resources are commonly used in scalable web applications to ensure high availability and load distribution.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ### Built With
 
 * [![AWS CloudFormation][AWS]][AWS-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Prerequisites
 

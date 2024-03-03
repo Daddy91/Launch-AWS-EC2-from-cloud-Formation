@@ -1,0 +1,60 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: AWS CloudFormation template to launch a Load Balancer, Target Group, and Auto Scaling Group with User Data.
+
+Resources:
+  MyLoadBalancer:
+    Type: 'AWS::ElasticLoadBalancingV2::LoadBalancer'
+    Properties:
+      Type: application
+      Subnets:
+        - subnet-01f0516864da100e4
+        - subnet-02dff2b62c67bff4e
+
+  MyTargetGroup:
+    Type: 'AWS::ElasticLoadBalancingV2::TargetGroup'
+    Properties:
+      Port: 80
+      Protocol: HTTP
+      VpcId: vpc-08a879f8b6db1cdd5
+      TargetType: instance
+
+  MyLaunchConfiguration:
+    Type: 'AWS::AutoScaling::LaunchConfiguration'
+    Properties:
+      ImageId: ami-083373e053dff862f
+      InstanceType: t2.micro
+      UserData:
+        Fn::Base64: |
+          #!/bin/bash
+          yum update -y
+          yum install -y httpd
+          systemctl start httpd
+          systemctl enable httpd
+          echo "Hello World from $(hostname -f)" > /var/www/html/index.html
+      SecurityGroups:
+        - sg-0b8ad3e2fce069d2f
+
+  MyAutoScalingGroup:
+    Type: 'AWS::AutoScaling::AutoScalingGroup'
+    Properties:
+      VPCZoneIdentifier:
+        - subnet-01f0516864da100e4
+        - subnet-02dff2b62c67bff4e
+      LaunchConfigurationName:
+        Ref: MyLaunchConfiguration
+      MinSize: '2'
+      MaxSize: '4'
+      TargetGroupARNs:
+        - Ref: MyTargetGroup
+
+  Listener:
+    Type: 'AWS::ElasticLoadBalancingV2::Listener'
+    Properties:
+      DefaultActions:
+        - Type: forward
+          TargetGroupArn:
+            Ref: MyTargetGroup
+      LoadBalancerArn:
+        Ref: MyLoadBalancer
+      Port: 80
+      Protocol: HTTP

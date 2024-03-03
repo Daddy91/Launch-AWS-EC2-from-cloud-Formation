@@ -5,7 +5,6 @@
 <br />
 <div align="center">
   <a href="https://github.com/Daddy91/Configuring-MariaDB-replication-Master-Master-on-AWS-EC2">
-    <img src="images/aws-logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Creating an AWS Application Load Balancer (ALB), Autoscaling Group, and Target Group using AWS CloudFormation</h3>
